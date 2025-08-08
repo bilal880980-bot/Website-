@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Purchase Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f8;
+      margin: 0;
+      padding: 20px;
+    }.container {
+  max-width: 420px;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.box {
+  height: 220px;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: left;
+  margin-bottom: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.premium-box {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  text-align: center;
+}
+
+.premium-box h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.feature {
+  text-align: left;
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+.feature::before {
+  content: '✔️';
+  margin-right: 10px;
+  color: #00ff99;
+}
+
+.payment-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.payment-method {
+  border: 2px solid #ddd;
+  padding: 25px;
+  color: #000;
+  position: relative;
+}
+
+.jazzcash {
+  border-color: #ff7b00;
+}
+
+.easypaisa {
+  border-color: #00c853;
+}
+
+.method-header {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.method-header img {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+  margin: 8px 0;
+  padding: 0 5px;
+}
+
+.top-detail {
+  margin-top: 50px;
+}
+
+.middle-detail {
+  margin: 20px 0 8px 0;
+}
+
+.bottom-detail {
+  margin-top: auto;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.screenshot-text {
+  text-align: center;
+  font-size: 15px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+.whatsapp-btn img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+  </style>
+</head>
+<body>  <div class="container">
+    <h1>Purchase Login</h1><!-- Premium Access Box -->
+<div class="box premium-box">
+  <h2>Premium Access</h2>
+  <div class="price">PKR 500</div>
+  <div class="feature">Full Access to SBL Tools</div>
+  <div class="feature">Premium Features Unlocked</div>
+  <div class="feature">24/7 Support</div>
+</div>
+
+<!-- Payment Title -->
+<div class="payment-title">Payment Method</div>
+
+<!-- JazzCash Box -->
+<div class="box payment-method jazzcash">
+  <div class="method-header">
+    <img src="https://img.icons8.com/fluency/48/mobile-payment.png" alt="JazzCash" />
+    JazzCash
+  </div>
+  <div class="top-detail">
+    <div class="detail-row">
+      <span class="label">Account Holder:</span>
+      <span>Muhammad Sameer</span>
+    </div>
+    <div class="detail-row middle-detail">
+      <span class="label">Mobile Number:</span>
+      <span>03217558607</span>
+    </div>
+  </div>
+  <div class="bottom-detail">
+    <div class="detail-row">
+      <span class="label">Amount:</span>
+      <span>PKR 500</span>
+    </div>
+  </div>
+</div>
+
+<!-- EasyPaisa Box -->
+<div class="box payment-method easypaisa">
+  <div class="method-header">
+    <img src="https://img.icons8.com/color/48/wallet--v1.png" alt="EasyPaisa" />
+    EasyPaisa
+  </div>
+  <div class="top-detail">
+    <div class="detail-row">
+      <span class="label">Account Holder:</span>
+      <span>Muhammad Sameer</span>
+    </div>
+    <div class="detail-row middle-detail">
+      <span class="label">Mobile Number:</span>
+      <span>03217558607</span>
+    </div>
+  </div>
+  <div class="bottom-detail">
+    <div class="detail-row">
+      <span class="label">Amount:</span>
+      <span>PKR 500</span>
+    </div>
+  </div>
+</div>
+
+<!-- Screenshot Instruction -->
+<div class="screenshot-text">Send me payment screenshot</div>
+
+<!-- WhatsApp Button -->
+<a class="whatsapp-btn" href="https://wa.me/923217558607?text=Hello%2C%20I%20have%20sent%20the%20payment%20screenshot" target="_blank">
+  <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
+  Payment Screenshot
+</a>
+
+  </div></body>
+</html>
