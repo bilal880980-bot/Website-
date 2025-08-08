@@ -1,239 +1,308 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Purchase Login</title>
+  <title>SBL Tools - Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f8;
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #e0e0e0;
       padding: 20px;
-    }.container {
-  max-width: 420px;
-  margin: auto;
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
+    }
 
-h1 {
-  text-align: center;
-  font-size: 26px;
-  margin-bottom: 25px;
-  font-weight: 700;
-}
+    .header-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-.box {
-  height: 220px;
-  border-radius: 20px;
-  padding: 25px;
-  text-align: left;
-  margin-bottom: 30px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+    .top-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00aaff;
+      box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+    }
 
-.premium-box {
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  color: white;
-  text-align: center;
-}
+    .sbl-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #00aaff;
+      margin-top: 15px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 5px rgba(0, 170, 255, 0.3);
+    }
 
-.premium-box h2 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 500;
-}
+    .login-container {
+      background-color: #1e1e1e;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      width: 380px;
+      max-width: 95%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #333;
+    }
 
-.price {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 12px 0;
-}
+    label {
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 1em;
+      color: #00aaff;
+      width: 100%;
+    }
 
-.feature {
-  text-align: left;
-  margin: 6px 0;
-  font-size: 15px;
-}
+    input[type="text"],
+    input[type="password"] {
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #444;
+      border-radius: 8px;
+      font-size: 1em;
+      background-color: #2c2c2c;
+      color: #e0e0e0;
+      width: 100%;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
 
-.feature::before {
-  content: '✔️';
-  margin-right: 10px;
-  color: #00ff99;
-}
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #00aaff;
+      box-shadow: 0 0 8px rgba(0, 170, 255, 0.3);
+      outline: none;
+    }
 
-.payment-title {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-}
+    .login-btn {
+      background: linear-gradient(90deg, #00aaff, #0077cc);
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-.payment-method {
-  border: 2px solid #ddd;
-  padding: 25px;
-  color: #000;
-  position: relative;
-}
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 122, 204, 0.4);
+    }
 
-.jazzcash {
-  border-color: #ff7b00;
-}
+    .contact-btn {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(90deg, #00aaff, #0077cc);
+      padding: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      width: 100%;
+      gap: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-.easypaisa {
-  border-color: #00c853;
-}
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 122, 204, 0.4);
+    }
 
-.method-header {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  font-weight: bold;
-}
+    .whatsapp-icon {
+      width: 24px;
+      height: 24px;
+    }
 
-.method-header img {
-  width: 22px;
-  height: 22px;
-  margin-right: 8px;
-}
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #888;
+      text-align: center;
+    }
 
-.detail-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 17px;
-  margin: 8px 0;
-  padding: 0 5px;
-}
+    #accessPage {
+      display: none;
+      max-width: 500px;
+      width: 100%;
+      background-color: white;
+      border-radius: 20px;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      color: #222;
+    }
 
-.top-detail {
-  margin-top: 50px;
-}
+    .check-icon {
+      background-color: #4caf50;
+      color: white;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      margin: 0 auto 20px;
+    }
 
-.middle-detail {
-  margin: 20px 0 8px 0;
-}
+    .main-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
 
-.bottom-detail {
-  margin-top: auto;
-}
+    .subtitle {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
+    }
 
-.label {
-  font-weight: bold;
-}
+    .access-text {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
 
-.screenshot-text {
-  text-align: center;
-  font-size: 15px;
-  margin-top: -10px;
-  margin-bottom: 15px;
-  color: #333;
-}
+    .category-box {
+      background-color: #f9f9f9;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
 
-.whatsapp-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #25D366;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
+    .category-box h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #222;
+    }
 
-.whatsapp-btn:hover {
-  background-color: #1ebe5d;
-}
+    .tool-button {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      width: 100%;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
 
-.whatsapp-btn img {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-}
+    .tool-button:hover {
+      background-color: #f0f0f0;
+    }
 
+    .credit {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
   </style>
 </head>
-<body>  <div class="container">
-    <h1>Purchase Login</h1><!-- Premium Access Box -->
-<div class="box premium-box">
-  <h2>Premium Access</h2>
-  <div class="price">PKR 500</div>
-  <div class="feature">Full Access to SBL Tools</div>
-  <div class="feature">Premium Features Unlocked</div>
-  <div class="feature">24/7 Support</div>
-</div>
-
-<!-- Payment Title -->
-<div class="payment-title">Payment Method</div>
-
-<!-- JazzCash Box -->
-<div class="box payment-method jazzcash">
-  <div class="method-header">
-    <img src="https://img.icons8.com/fluency/48/mobile-payment.png" alt="JazzCash" />
-    JazzCash
-  </div>
-  <div class="top-detail">
-    <div class="detail-row">
-      <span class="label">Account Holder:</span>
-      <span>Muhammad Sameer</span>
+<body>
+  <!-- LOGIN PAGE -->
+  <div id="loginPage">
+    <div class="header-container">
+      <img src="sbl_logo.jpg" alt="SBL Tools Logo" class="top-logo" />
+      <div class="sbl-title">SBL TOOLS</div>
     </div>
-    <div class="detail-row middle-detail">
-      <span class="label">Mobile Number:</span>
-      <span>03217558607</span>
-    </div>
-  </div>
-  <div class="bottom-detail">
-    <div class="detail-row">
-      <span class="label">Amount:</span>
-      <span>PKR 500</span>
-    </div>
-  </div>
-</div>
 
-<!-- EasyPaisa Box -->
-<div class="box payment-method easypaisa">
-  <div class="method-header">
-    <img src="https://img.icons8.com/color/48/wallet--v1.png" alt="EasyPaisa" />
-    EasyPaisa
-  </div>
-  <div class="top-detail">
-    <div class="detail-row">
-      <span class="label">Account Holder:</span>
-      <span>Muhammad Sameer</span>
-    </div>
-    <div class="detail-row middle-detail">
-      <span class="label">Mobile Number:</span>
-      <span>03217558607</span>
-    </div>
-  </div>
-  <div class="bottom-detail">
-    <div class="detail-row">
-      <span class="label">Amount:</span>
-      <span>PKR 500</span>
-    </div>
-  </div>
-</div>
+    <div class="login-container">
+      <form id="loginForm" onsubmit="return handleLogin(event)">
+        <label for="username">Username</label>
+        <input type="text" id="username" required />
 
-<!-- Screenshot Instruction -->
-<div class="screenshot-text">Send me payment screenshot</div>
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
 
-<!-- WhatsApp Button -->
-<a class="whatsapp-btn" href="https://wa.me/923217558607?text=Hello%2C%20I%20have%20sent%20the%20payment%20screenshot" target="_blank">
-  <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
-  Payment Screenshot
-</a>
+        <button type="submit" class="login-btn">Login</button>
+      </form>
 
-  </div></body>
+      <!-- Contact Admin -->
+      <a href="https://wa.me/923217558607" class="contact-btn" target="_blank">
+        <img src="whatsapp_icon.png" alt="WhatsApp" class="whatsapp-icon" />
+        Contact Admin
+      </a>
+
+      <!-- ✅ FIXED Purchase Login Button -->
+      <a href="purchase.html" class="contact-btn" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/24/shopping-cart.png" alt="Purchase" class="whatsapp-icon" />
+        Purchase Login
+      </a>
+    </div>
+
+    <div class="footer">&copy; 2025 SBL Tools. All rights reserved.</div>
+  </div>
+
+  <!-- ACCESS GRANTED PAGE -->
+  <div id="accessPage">
+    <div class="check-icon"><i class="fas fa-check"></i></div>
+    <div class="main-title">Access Granted!</div>
+    <div class="subtitle">Welcome to SBL Tools</div>
+    <div class="access-text">You now have access to:</div>
+
+    <!-- Category 1 -->
+    <div class="category-box">
+      <h2><i class="fas fa-virus" style="color: #e53935;"></i> VIRUS APK</h2>
+      <div class="tool-button"><i class="fas fa-link"></i> SBL TOOL 1</div>
+      <div class="tool-button"><i class="fas fa-link"></i> SBL TOOL 2</div>
+      <div class="tool-button"><i class="fas fa-link"></i> SBL TOOL 3</div>
+    </div>
+
+    <!-- Category 2 -->
+    <div class="category-box">
+      <h2><i class="fas fa-download" style="color: #1e88e5;"></i> ALL SOCIAL MEDIA VIDEO DOWNLOAD</h2>
+      <div class="tool-button"><i class="fas fa-link"></i> SBL TOOL 4</div>
+      <div class="tool-button"><i class="fas fa-link"></i> SBL TOOL 5</div>
+      <div class="tool-button"><i class="fas fa-link"></i> SBL TOOL 6</div>
+    </div>
+
+    <div class="credit">Credit by: Maliksameer</div>
+  </div>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (username === 'SBLTOOL' && password === 'SBLTOOLS1892022') {
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('accessPage').style.display = 'block';
+      } else {
+        alert('Invalid Username or Password.');
+      }
+    }
+  </script>
+</body>
 </html>
